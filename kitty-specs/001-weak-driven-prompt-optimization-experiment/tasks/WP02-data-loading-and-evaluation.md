@@ -1,12 +1,12 @@
 ---
 work_package_id: WP02
 title: Data Loading and Evaluation Harness
-lane: "doing"
+lane: "for_review"
 dependencies: [WP01]
 subtasks: [T004, T005, T006]
-agent: "gemini-cli"
+agent: gemini-cli
+shell_pid: '885169'
 requirement_refs: [FR-002, FR-005]
-shell_pid: "885169"
 ---
 
 # Work Package Prompt: WP02 - Data Loading and Evaluation Harness
@@ -51,3 +51,4 @@ Implement the data pipeline required to evaluate the models. This includes strea
 - 2026-02-27T10:18:53Z – gemini-cli – lane=in_progress – Moved to in_progress
 - 2026-02-27T10:21:34Z – gemini-cli – lane=for_review – Moved to for_review
 - 2026-02-27T10:30:00Z – gemini-cli – shell_pid=885169 – lane=doing – Started implementation via workflow command
+- 2026-02-27T10:33:17Z – gemini-cli – shell_pid=885169 – lane=for_review – Ready for review: Implemented streaming loaders for FRONTIERMATH, SuperGPQA, and tau2-Bench. Added robust regex-based metric evaluation. Implemented JSONL exporter.
