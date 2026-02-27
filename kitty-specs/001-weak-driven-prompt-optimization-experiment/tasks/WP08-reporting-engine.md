@@ -1,10 +1,14 @@
 ---
-work_package_id: "WP08"
-title: "Reporting Engine"
-lane: "planned"
-requirement_refs: ["FR-005"]
-dependencies: ["WP06"]
-subtasks: ["T020", "T021", "T022"]
+work_package_id: WP08
+title: Reporting Engine
+lane: "doing"
+dependencies: [WP06]
+base_branch: main
+base_commit: c86dc770ac0e1326be5fdf0c2a884db71992a433
+created_at: '2026-02-27T14:01:39.270721+00:00'
+subtasks: [T020, T021, T022]
+requirement_refs: [FR-005]
+shell_pid: "922104"
 ---
 
 # Work Package Prompt: WP08 - Reporting Engine
