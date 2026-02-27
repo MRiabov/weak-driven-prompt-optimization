@@ -79,8 +79,8 @@
 **Summary**: The main loop that connects the stages and manages the overall workflow.
 **Requirement Refs**: FR-004
 **Included Subtasks**:
-- [ ] T016: Implement the `ExperimentRunner`
-- [ ] T017: Wire transitions (Stage 1 -> Stage 2 -> Stage 3)
+- [x] T016: Implement the `ExperimentRunner`
+- [x] T017: Wire transitions (Stage 1 -> Stage 2 -> Stage 3)
 **Implementation Notes**: Passes outputs of one stage as inputs to the next.
 **Parallel Opportunities**: None
 **Dependencies**: WP05
