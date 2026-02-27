@@ -1,10 +1,14 @@
 ---
-work_package_id: "WP09"
-title: "Integration Testing"
-lane: "planned"
-requirement_refs: ["FR-004"]
-dependencies: ["WP07", "WP08"]
-subtasks: ["T023", "T024"]
+work_package_id: WP09
+title: Integration Testing
+lane: "doing"
+dependencies: [WP07, WP08]
+base_branch: main
+base_commit: 3b7d712438cf26e949293e53c1626a5c2a737036
+created_at: '2026-02-27T14:34:34.557386+00:00'
+subtasks: [T023, T024]
+requirement_refs: [FR-004]
+shell_pid: "922104"
 ---
 
 # Work Package Prompt: WP09 - Integration Testing
