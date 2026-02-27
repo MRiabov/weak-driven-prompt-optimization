@@ -67,9 +67,9 @@
 **Summary**: Isolate the business logic for each experimental stage into dedicated executor classes.
 **Requirement Refs**: FR-004
 **Included Subtasks**:
-- [ ] T013: Implement `Stage1Executor` (Baseline Large Model)
-- [ ] T014: Implement `Stage2Executor` (Hardening Small Model)
-- [ ] T015: Implement `Stage3Executor` (Re-evaluation)
+- [x] T013: Implement `Stage1Executor` (Baseline Large Model)
+- [x] T014: Implement `Stage2Executor` (Hardening Small Model)
+- [x] T015: Implement `Stage3Executor` (Re-evaluation)
 **Implementation Notes**: These classes should wrap the DSPy optimization loops with logging and state updates.
 **Parallel Opportunities**: None
 **Dependencies**: WP02, WP03, WP04
