@@ -1,14 +1,14 @@
 ---
 work_package_id: WP01
 title: Foundation and Models
-lane: "for_review"
+lane: "doing"
 dependencies: []
 base_branch: main
 base_commit: fcc593602b6dcaf06b36696cca72738e8d011192
 created_at: '2026-02-27T10:01:29.830373+00:00'
 subtasks: [T001, T002, T003]
-agent: Gemini
-shell_pid: '852409'
+agent: "gemini-cli"
+shell_pid: "869759"
 requirement_refs: [FR-001, FR-003]
 ---
 
@@ -67,3 +67,4 @@ Set up the core project infrastructure, dependencies, and data schemas necessary
 - 2026-02-27T00:00:00Z – system – lane=planned – Prompt created.
 - 2026-02-27T10:01:30Z – Gemini – shell_pid=852409 – lane=doing – Assigned agent via workflow command
 - 2026-02-27T10:09:19Z – Gemini – shell_pid=852409 – lane=for_review – Foundation setup, domain models, and observability implemented and verified with tests.
+- 2026-02-27T10:17:24Z – gemini-cli – shell_pid=869759 – lane=doing – Started review via workflow command
