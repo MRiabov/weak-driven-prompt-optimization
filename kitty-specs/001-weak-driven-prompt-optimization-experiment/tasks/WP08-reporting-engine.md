@@ -9,6 +9,7 @@ created_at: '2026-02-27T14:01:39.270721+00:00'
 subtasks: [T020, T021, T022]
 requirement_refs: [FR-005]
 shell_pid: "922104"
+agent: "Antigravity"
 ---
 
 # Work Package Prompt: WP08 - Reporting Engine
@@ -46,3 +47,4 @@ The entire purpose of this feature is research. The reporting engine is responsi
 
 ## Activity Log
 - 2026-02-27T00:00:00Z – system – lane=planned – Prompt created.
+- 2026-02-27T14:01:39Z – Antigravity – shell_pid=922104 – lane=doing – Assigned agent via workflow command
