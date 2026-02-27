@@ -1,9 +1,10 @@
 {
   "feature_number": "001",
   "slug": "001-weak-driven-prompt-optimization-experiment",
-  "feature_slug": "001-weak-driven-prompt-optimization-experiment",
-  "friendly_name": "weak driven prompt optimization experiment",
+  "friendly_name": "Weak-Driven Prompt Optimization Experiment",
   "mission": "software-dev",
+  "source_description": "Help me specify the research task as per @idea.md and, more verbosely, @Gemini-Prompt Optimization Research Plan.md",
+  "created_at": "2026-02-27T18:00:00Z",
   "target_branch": "main",
-  "created_at": "2026-02-27T08:37:15.285702+00:00"
+  "vcs": "git"
 }
