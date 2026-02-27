@@ -1,10 +1,14 @@
 ---
-work_package_id: "WP07"
-title: "CLI Application"
-lane: "planned"
-requirement_refs: ["FR-003"]
-dependencies: ["WP06"]
-subtasks: ["T018", "T019"]
+work_package_id: WP07
+title: CLI Application
+lane: "doing"
+dependencies: [WP06]
+base_branch: main
+base_commit: 898de941d75196cf5fe08b0adcea05df3c75c267
+created_at: '2026-02-27T12:39:32.420973+00:00'
+subtasks: [T018, T019]
+requirement_refs: [FR-003]
+shell_pid: "978047"
 ---
 
 # Work Package Prompt: WP07 - CLI Application
