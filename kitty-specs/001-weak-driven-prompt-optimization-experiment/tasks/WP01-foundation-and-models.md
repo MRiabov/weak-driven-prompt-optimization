@@ -1,10 +1,14 @@
 ---
-work_package_id: "WP01"
-title: "Foundation and Models"
-lane: "planned"
-requirement_refs: ["FR-001", "FR-003"]
+work_package_id: WP01
+title: Foundation and Models
+lane: "doing"
 dependencies: []
-subtasks: ["T001", "T002", "T003"]
+base_branch: main
+base_commit: fcc593602b6dcaf06b36696cca72738e8d011192
+created_at: '2026-02-27T10:01:29.830373+00:00'
+subtasks: [T001, T002, T003]
+requirement_refs: [FR-001, FR-003]
+shell_pid: "852409"
 ---
 
 # Work Package Prompt: WP01 - Foundation and Models

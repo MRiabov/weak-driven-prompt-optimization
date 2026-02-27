@@ -1,0 +1,15 @@
+vcs:
+  type: git
+agents:
+  available:
+  - claude
+  - gemini
+  - codex
+  selection:
+    strategy: random
+    preferred_implementer:
+    preferred_reviewer:
+project:
+  uuid: 6ae3f00c-b1e3-4809-9c7b-112fb994aa1e
+  slug: weak-driven-prompt-optimization
+  node_id: f517e89ef941
