@@ -1,11 +1,12 @@
 ---
 work_package_id: WP02
 title: Data Loading and Evaluation Harness
-lane: "for_review"
+lane: "doing"
 dependencies: [WP01]
 subtasks: [T004, T005, T006]
 agent: "gemini-cli"
 requirement_refs: [FR-002, FR-005]
+shell_pid: "885169"
 ---
 
 # Work Package Prompt: WP02 - Data Loading and Evaluation Harness
@@ -49,3 +50,4 @@ Implement the data pipeline required to evaluate the models. This includes strea
 - 2026-02-27T00:00:00Z – system – lane=planned – Prompt created.
 - 2026-02-27T10:18:53Z – gemini-cli – lane=in_progress – Moved to in_progress
 - 2026-02-27T10:21:34Z – gemini-cli – lane=for_review – Moved to for_review
+- 2026-02-27T10:30:00Z – gemini-cli – shell_pid=885169 – lane=doing – Started implementation via workflow command
