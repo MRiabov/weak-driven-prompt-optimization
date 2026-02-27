@@ -1,14 +1,14 @@
 ---
 work_package_id: WP07
 title: CLI Application
-lane: "for_review"
+lane: "doing"
 dependencies: [WP06]
 base_branch: main
 base_commit: 898de941d75196cf5fe08b0adcea05df3c75c267
 created_at: '2026-02-27T12:39:32.420973+00:00'
 subtasks: [T018, T019]
-agent: Antigravity
-shell_pid: '978047'
+agent: "Antigravity"
+shell_pid: "922104"
 requirement_refs: [FR-003]
 ---
 
@@ -43,3 +43,4 @@ Provide the user interface to trigger the experiment runner. This focuses purely
 - 2026-02-27T00:00:00Z – system – lane=planned – Prompt created.
 - 2026-02-27T12:39:32Z – Antigravity – shell_pid=978047 – lane=doing – Assigned agent via workflow command
 - 2026-02-27T12:43:39Z – Antigravity – shell_pid=978047 – lane=for_review – Ready for review: Implemented main.py with run-experiment command and YAML parsing
+- 2026-02-27T12:45:48Z – Antigravity – shell_pid=922104 – lane=doing – Started review via workflow command
