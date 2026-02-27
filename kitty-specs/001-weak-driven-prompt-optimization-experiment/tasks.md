@@ -120,9 +120,9 @@
 **Requirement Refs**: FR-005
 **Included Subtasks**:
 
-- [ ] T020: Implement data aggregation logic
-- [ ] T021: Implement markdown report generator
-- [ ] T022: Add `report` command to CLI
+- [x] T020: Implement data aggregation logic
+- [x] T021: Implement markdown report generator
+- [x] T022: Add `report` command to CLI
 **Implementation Notes**: Compare baseline vs hardened prompt accuracy.
 **Parallel Opportunities**: Yes, parallel with WP07.
 **Dependencies**: WP06
@@ -151,5 +151,5 @@
 - WP04: done
 - WP05: done
 - WP06: done
-- WP07: for_review
+- WP07: done
 <!-- status-model:end -->
