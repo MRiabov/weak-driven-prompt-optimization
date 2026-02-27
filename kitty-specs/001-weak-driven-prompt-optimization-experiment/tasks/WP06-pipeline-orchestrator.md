@@ -1,18 +1,18 @@
 ---
 work_package_id: WP06
 title: Pipeline Orchestrator
-lane: "doing"
+lane: "for_review"
 dependencies: [WP05]
 base_branch: main
 base_commit: 46dc0f7eb87f4a5febdce5ba4be1d51fb44b4815
 created_at: '2026-02-27T12:02:11.479324+00:00'
 subtasks: [T016, T017]
-agent: "Antigravity"
-shell_pid: "922104"
+agent: Antigravity
+shell_pid: '922104'
+review_status: has_feedback
+reviewed_by: MRiabov
 requirement_refs: [FR-004]
-review_status: "has_feedback"
-reviewed_by: "MRiabov"
-review_feedback_file: "/tmp/spec-kitty-review-feedback-WP06.md"
+review_feedback_file: /tmp/spec-kitty-review-feedback-WP06.md
 ---
 
 # Work Package Prompt: WP06 - Pipeline Orchestrator
@@ -78,3 +78,4 @@ The implementation of `ExperimentRunner` in `src/runner/orchestrator.py` has sev
 - 2026-02-27T12:16:27Z – Antigravity – shell_pid=922104 – lane=doing – Started review via workflow command
 - 2026-02-27T12:19:02Z – Antigravity – shell_pid=922104 – lane=planned – Moved to planned
 - 2026-02-27T12:25:40Z – Antigravity – shell_pid=922104 – lane=doing – Started implementation via workflow command
+- 2026-02-27T12:30:48Z – Antigravity – shell_pid=922104 – lane=for_review – Aligned orchestrator with WP05 API and added integration tests. Verified transitions with mocks.
