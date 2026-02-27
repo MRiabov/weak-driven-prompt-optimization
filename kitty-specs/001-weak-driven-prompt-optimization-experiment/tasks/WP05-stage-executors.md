@@ -9,6 +9,7 @@ created_at: '2026-02-27T11:28:11.955287+00:00'
 subtasks: [T013, T014, T015]
 requirement_refs: [FR-004]
 shell_pid: "922104"
+agent: "Antigravity"
 ---
 
 # Work Package Prompt: WP05 - Experiment Stage Executors
@@ -51,3 +52,4 @@ Isolate the complex business logic of the individual experimental stages into de
 
 ## Activity Log
 - 2026-02-27T00:00:00Z – system – lane=planned – Prompt created.
+- 2026-02-27T11:28:12Z – Antigravity – shell_pid=922104 – lane=doing – Assigned agent via workflow command
