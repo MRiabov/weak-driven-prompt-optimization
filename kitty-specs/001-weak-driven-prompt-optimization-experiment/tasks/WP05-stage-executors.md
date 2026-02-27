@@ -1,10 +1,14 @@
 ---
-work_package_id: "WP05"
-title: "Experiment Stage Executors"
-lane: "planned"
-requirement_refs: ["FR-004"]
-dependencies: ["WP02", "WP03", "WP04"]
-subtasks: ["T013", "T014", "T015"]
+work_package_id: WP05
+title: Experiment Stage Executors
+lane: "doing"
+dependencies: [WP02, WP03, WP04]
+base_branch: main
+base_commit: 535043111edae4ee24837510cf9c71ee3206b747
+created_at: '2026-02-27T11:28:11.955287+00:00'
+subtasks: [T013, T014, T015]
+requirement_refs: [FR-004]
+shell_pid: "922104"
 ---
 
 # Work Package Prompt: WP05 - Experiment Stage Executors
