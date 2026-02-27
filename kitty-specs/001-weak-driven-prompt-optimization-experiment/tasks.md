@@ -1,6 +1,7 @@
 # Work Packages
 
 ## Context
+
 **Feature**: 001-weak-driven-prompt-optimization-experiment
 **Branch**: 001-weak-driven-prompt-optimization-experiment
 **Target completion**: Phase 1
@@ -10,9 +11,11 @@
 ### Setup & Foundation
 
 ### WP01: Foundation and Models
+
 **Summary**: Set up the Python environment, dependencies, and define the core Pydantic data models.
 **Requirement Refs**: FR-001, FR-003
 **Included Subtasks**:
+
 - [x] T001: Set up project environment (pyproject.toml/requirements.txt)
 - [x] T002: Implement Pydantic domain models
 - [x] T003: Configure Langfuse tracing and OpenRouter clients
@@ -24,9 +27,11 @@
 ### Core Evaluation & Data
 
 ### WP02: Data Loading and Evaluation Harness
+
 **Summary**: Implement streaming data loaders for HuggingFace datasets and define the evaluation metrics.
 **Requirement Refs**: FR-002, FR-005
 **Included Subtasks**:
+
 - [x] T004: Implement HuggingFace dataset streaming loaders
 - [x] T005: Implement metric evaluation functions
 - [x] T006: Implement `DatasetExporter` for JSONL output
@@ -38,9 +43,11 @@
 ### Optimization Pipeline
 
 ### WP03: DSPy Core and GEPA Integration
+
 **Summary**: Build the DSPy signatures, modules, and the GEPA optimization logic for both the baseline and weak-agent stages.
 **Requirement Refs**: FR-001, FR-006
 **Included Subtasks**:
+
 - [x] T007: Implement DSPy signatures and modules
 - [x] T008: Integrate GEPA optimizer for the baseline stage
 - [x] T009: Implement weak-agent hardening stage logic
@@ -52,9 +59,11 @@
 ### Orchestration & State Management
 
 ### WP04: State Management and Checkpointing
+
 **Summary**: Build a robust state manager to persist progress, handle budget constraints, and enable run resumption.
 **Requirement Refs**: FR-005, FR-006
 **Included Subtasks**:
+
 - [x] T010: Implement `ExperimentState` manager
 - [x] T011: Implement budget iteration tracking
 - [x] T012: Implement save/load checkpoints for models
@@ -64,9 +73,11 @@
 **Prompt File**: WP04-state-management.md
 
 ### WP05: Experiment Stage Executors
+
 **Summary**: Isolate the business logic for each experimental stage into dedicated executor classes.
 **Requirement Refs**: FR-004
 **Included Subtasks**:
+
 - [x] T013: Implement `Stage1Executor` (Baseline Large Model)
 - [x] T014: Implement `Stage2Executor` (Hardening Small Model)
 - [x] T015: Implement `Stage3Executor` (Re-evaluation)
@@ -76,9 +87,11 @@
 **Prompt File**: WP05-stage-executors.md
 
 ### WP06: Pipeline Orchestrator
+
 **Summary**: The main loop that connects the stages and manages the overall workflow.
 **Requirement Refs**: FR-004
 **Included Subtasks**:
+
 - [x] T016: Implement the `ExperimentRunner`
 - [x] T017: Wire transitions (Stage 1 -> Stage 2 -> Stage 3)
 **Implementation Notes**: Passes outputs of one stage as inputs to the next.
@@ -89,9 +102,11 @@
 ### Reporting & Interaction
 
 ### WP07: CLI Application
+
 **Summary**: Provide the user interface to trigger the experiment runner.
 **Requirement Refs**: FR-003
 **Included Subtasks**:
+
 - [ ] T018: Build CLI entrypoint (`main.py`)
 - [ ] T019: Implement `run-experiment` command
 **Implementation Notes**: Use standard libraries like argparse or click.
@@ -100,9 +115,11 @@
 **Prompt File**: WP07-cli-application.md
 
 ### WP08: Reporting Engine
+
 **Summary**: Aggregate data and generate analytical comparison reports.
 **Requirement Refs**: FR-005
 **Included Subtasks**:
+
 - [ ] T020: Implement data aggregation logic
 - [ ] T021: Implement markdown report generator
 - [ ] T022: Add `report` command to CLI
@@ -114,9 +131,11 @@
 ### Validation
 
 ### WP09: Integration Testing
+
 **Summary**: Validate the entire end-to-end system using mock LLMs as mandated by the constitution.
 **Requirement Refs**: FR-004
 **Included Subtasks**:
+
 - [ ] T023: Implement mock LLM client for DSPy
 - [ ] T024: Write end-to-end integration tests
 **Implementation Notes**: No unit tests. Only black-box testing of the full workflow.
@@ -126,9 +145,11 @@
 
 <!-- status-model:start -->
 ## Canonical Status (Generated)
+
 - WP01: done
 - WP02: done
 - WP03: done
 - WP04: done
 - WP05: done
+- WP06: planned
 <!-- status-model:end -->
