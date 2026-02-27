@@ -1,0 +1,26 @@
+[project]
+name = "weak-driven-prompt-optimization"
+version = "0.1.0"
+description = "Weak-Driven Prompt Optimization Experiment"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "dspy-ai",
+    "langfuse",
+    "pydantic>=2.0",
+    "datasets",
+    "openai",
+    "pyyaml",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "black",
+    "isort",
+    "mypy",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
