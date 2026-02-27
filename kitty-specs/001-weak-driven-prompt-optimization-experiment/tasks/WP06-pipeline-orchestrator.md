@@ -9,6 +9,7 @@ created_at: '2026-02-27T12:02:11.479324+00:00'
 subtasks: [T016, T017]
 requirement_refs: [FR-004]
 shell_pid: "922104"
+agent: "Antigravity"
 ---
 
 # Work Package Prompt: WP06 - Pipeline Orchestrator
@@ -43,3 +44,4 @@ With all individual stages, datasets, and state managers implemented, we need a 
 
 ## Activity Log
 - 2026-02-27T00:00:00Z – system – lane=planned – Prompt created.
+- 2026-02-27T12:02:11Z – Antigravity – shell_pid=922104 – lane=doing – Assigned agent via workflow command
