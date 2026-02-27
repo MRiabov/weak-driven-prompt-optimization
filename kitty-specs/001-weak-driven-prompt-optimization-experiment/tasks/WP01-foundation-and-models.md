@@ -9,6 +9,7 @@ created_at: '2026-02-27T10:01:29.830373+00:00'
 subtasks: [T001, T002, T003]
 requirement_refs: [FR-001, FR-003]
 shell_pid: "852409"
+agent: "Gemini"
 ---
 
 # Work Package Prompt: WP01 - Foundation and Models
@@ -64,3 +65,4 @@ Set up the core project infrastructure, dependencies, and data schemas necessary
 
 ## Activity Log
 - 2026-02-27T00:00:00Z – system – lane=planned – Prompt created.
+- 2026-02-27T10:01:30Z – Gemini – shell_pid=852409 – lane=doing – Assigned agent via workflow command
