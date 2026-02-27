@@ -1,14 +1,14 @@
 ---
 work_package_id: WP08
 title: Reporting Engine
-lane: "for_review"
+lane: "doing"
 dependencies: [WP06]
 base_branch: main
 base_commit: c86dc770ac0e1326be5fdf0c2a884db71992a433
 created_at: '2026-02-27T14:01:39.270721+00:00'
 subtasks: [T020, T021, T022]
-agent: Antigravity
-shell_pid: '922104'
+agent: "Antigravity"
+shell_pid: "922104"
 requirement_refs: [FR-005]
 ---
 
@@ -49,3 +49,4 @@ The entire purpose of this feature is research. The reporting engine is responsi
 - 2026-02-27T00:00:00Z – system – lane=planned – Prompt created.
 - 2026-02-27T14:01:39Z – Antigravity – shell_pid=922104 – lane=doing – Assigned agent via workflow command
 - 2026-02-27T14:27:40Z – Antigravity – shell_pid=922104 – lane=for_review – Reporting engine implemented with CLI integration and verified with mock data.
+- 2026-02-27T14:29:21Z – Antigravity – shell_pid=922104 – lane=doing – Started review via workflow command
