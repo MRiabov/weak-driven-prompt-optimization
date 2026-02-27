@@ -123,3 +123,8 @@
 **Parallel Opportunities**: None
 **Dependencies**: WP07, WP08
 **Prompt File**: WP09-integration-testing.md
+
+<!-- status-model:start -->
+## Canonical Status (Generated)
+- WP01: for_review
+<!-- status-model:end -->
