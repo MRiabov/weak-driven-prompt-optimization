@@ -1,13 +1,13 @@
 {
-  "event_count": 15,
+  "event_count": 20,
   "feature_slug": "001-weak-driven-prompt-optimization-experiment",
-  "last_event_id": "01KJFBS6DM3WQQTE6CW5H037BK",
-  "materialized_at": "2026-02-27T10:54:46.196986+00:00",
+  "last_event_id": "01KJFC62PV41J1599YNBSMXTZW",
+  "materialized_at": "2026-02-27T11:01:48.380393+00:00",
   "summary": {
     "blocked": 0,
     "canceled": 0,
     "claimed": 0,
-    "done": 2,
+    "done": 3,
     "for_review": 1,
     "in_progress": 0,
     "planned": 0
@@ -29,10 +29,17 @@
     },
     "WP03": {
       "actor": "user",
+      "force_count": 2,
+      "lane": "done",
+      "last_event_id": "01KJFC0D1QT1D81VSDTJVNC1Z3",
+      "last_transition_at": "2026-02-27T10:58:42.359339+00:00"
+    },
+    "WP04": {
+      "actor": "user",
       "force_count": 1,
       "lane": "for_review",
-      "last_event_id": "01KJFBS6DM3WQQTE6CW5H037BK",
-      "last_transition_at": "2026-02-27T10:54:46.196626+00:00"
+      "last_event_id": "01KJFC62PV41J1599YNBSMXTZW",
+      "last_transition_at": "2026-02-27T11:01:48.379694+00:00"
     }
   }
 }
