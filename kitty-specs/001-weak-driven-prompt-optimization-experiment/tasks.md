@@ -136,8 +136,8 @@
 **Requirement Refs**: FR-004
 **Included Subtasks**:
 
-- [ ] T023: Implement mock LLM client for DSPy
-- [ ] T024: Write end-to-end integration tests
+- [x] T023: Implement mock LLM client for DSPy
+- [x] T024: Write end-to-end integration tests
 **Implementation Notes**: No unit tests. Only black-box testing of the full workflow.
 **Parallel Opportunities**: None
 **Dependencies**: WP07, WP08
