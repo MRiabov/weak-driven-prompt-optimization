@@ -9,6 +9,7 @@ created_at: '2026-02-27T11:00:53.316779+00:00'
 subtasks: [T010, T011, T012]
 requirement_refs: [FR-005, FR-006]
 shell_pid: "906016"
+agent: "gemini-cli"
 ---
 
 # Work Package Prompt: WP04 - State Management and Checkpointing
@@ -46,3 +47,4 @@ Because experiments use expensive external API calls (OpenRouter) and can take a
 
 ## Activity Log
 - 2026-02-27T00:00:00Z – system – lane=planned – Prompt created.
+- 2026-02-27T11:00:53Z – gemini-cli – shell_pid=906016 – lane=doing – Assigned agent via workflow command
