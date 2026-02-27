@@ -18,21 +18,47 @@ def evaluate_exact_match(raw_output: str, expected_answer: str) -> Tuple[bool, s
     
     return is_correct, parsed_answer
 
-def evaluate_regex_match(raw_output: str, expected_answer: str, pattern: str = r"Final Answer:\s*(.*)") -> Tuple[bool, str]:
+def evaluate_regex_match(raw_output: str, expected_answer: str, pattern: Optional[str] = None) -> Tuple[bool, str]:
     """
     Extracts an answer using regex and compares with expected.
+    Supports several common formats (e.g. boxed answers, Final Answer markers).
     """
-    match = re.search(pattern, raw_output, re.IGNORECASE | re.DOTALL)
-    if match:
-        parsed_answer = match.group(1).strip()
+    if pattern:
+        patterns = [pattern]
     else:
-        # Fallback to the whole output if pattern not found
-        parsed_answer = raw_output.strip()
+        # Priority order for extraction patterns
+        patterns = [
+            r"\\boxed\{(.*?)\}",                    # LaTeX boxed answer
+            r"Final Answer:\s*(.*)",              # Explicit Final Answer label
+            r"The answer is:\s*(.*)",             # Common answer prompt
+            r"####\s*(.*)",                       # GSM8K-style separator
+        ]
 
-    cleaned_parsed = parsed_answer.lower()
-    cleaned_expected = expected_answer.strip().lower()
+    parsed_answer = ""
+    for pat in patterns:
+        match = re.search(pat, raw_output, re.IGNORECASE | re.DOTALL)
+        if match:
+            # If multiple matches, we take the LAST one as models often reason and then conclude.
+            all_matches = re.findall(pat, raw_output, re.IGNORECASE | re.DOTALL)
+            parsed_answer = all_matches[-1].strip()
+            break
     
-    is_correct = cleaned_expected in cleaned_parsed or cleaned_parsed == cleaned_expected
+    if not parsed_answer:
+        # Fallback to the last line if it's not too long, or the whole thing
+        lines = raw_output.strip().split("\n")
+        if lines:
+            last_line = lines[-1].strip()
+            if len(last_line) < 100:
+                parsed_answer = last_line
+            else:
+                parsed_answer = raw_output.strip()
+    
+    # Normalization for comparison
+    cleaned_parsed = parsed_answer.lower().replace(",", "").replace("$", "").strip()
+    cleaned_expected = expected_answer.strip().lower().replace(",", "").replace("$", "")
+    
+    # We want to be lenient: if expected is in parsed, or if they are equal
+    is_correct = (cleaned_expected == cleaned_parsed) or (f" {cleaned_expected}" in f" {cleaned_parsed} ")
     
     return is_correct, parsed_answer
 
@@ -41,5 +67,6 @@ def get_evaluator(benchmark_name: str):
     Returns the appropriate evaluation function for the benchmark.
     """
     if benchmark_name in ["FRONTIERMATH", "SuperGPQA"]:
+        # Use regex for structured extraction
         return evaluate_regex_match
     return evaluate_exact_match
