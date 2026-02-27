@@ -1,10 +1,14 @@
 ---
-work_package_id: "WP06"
-title: "Pipeline Orchestrator"
-lane: "planned"
-requirement_refs: ["FR-004"]
-dependencies: ["WP05"]
-subtasks: ["T016", "T017"]
+work_package_id: WP06
+title: Pipeline Orchestrator
+lane: "doing"
+dependencies: [WP05]
+base_branch: main
+base_commit: 46dc0f7eb87f4a5febdce5ba4be1d51fb44b4815
+created_at: '2026-02-27T12:02:11.479324+00:00'
+subtasks: [T016, T017]
+requirement_refs: [FR-004]
+shell_pid: "922104"
 ---
 
 # Work Package Prompt: WP06 - Pipeline Orchestrator
