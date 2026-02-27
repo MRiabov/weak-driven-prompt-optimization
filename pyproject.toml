@@ -11,6 +11,7 @@ dependencies = [
     "datasets",
     "openai",
     "pyyaml",
+    "python-dotenv",
 ]
 
 [dependency-groups]

@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 
 class ReportingEngine:
-    def __init__(self, experiment_id: str, base_dir: str = "experiments"):
+    def __init__(self, experiment_id: str, base_dir: str = ".checkpoints"):
         self.experiment_id = experiment_id
         self.exp_dir = Path(base_dir) / experiment_id
 
@@ -35,7 +35,7 @@ class ReportingEngine:
 
     def load_prompts(self) -> List[PromptCandidate]:
         prompts = []
-        prompts_dir = self.exp_dir / "prompts"
+        prompts_dir = self.exp_dir / "candidates"
         if not prompts_dir.exists():
             return prompts
         for p in prompts_dir.glob("*.json"):

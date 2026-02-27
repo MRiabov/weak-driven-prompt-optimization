@@ -27,6 +27,7 @@ class ExperimentRunner:
             experiment_id=config.experiment_id,
             max_budget_iterations=config.budget_iterations,
         )
+        self.state_manager.save_config(config)
 
         # Initialize observability
         self.langfuse_handler = init_langfuse()
@@ -67,23 +68,22 @@ class ExperimentRunner:
         ]:
             logger.info("Running Stage 1: Baseline Optimization")
             baseline_candidate = self.stage1_executor.execute(
-                train_loader=self.loader, benchmark=benchmark, limit=10
+                train_loader=self.loader,
+                benchmark=benchmark,
+                limit=self.config.data_limit,
             )
         else:
             logger.info(
                 "Skipping Stage 1 (already complete). Loading baseline candidate."
             )
             # Find the most recent baseline candidate from storage
-            # In a more robust system, we would track the explicit prompt_id in state.json
-            # For now, we assume we can find it by prompt_id convention or list
-            # Since WP05 doesn't store prompt_id in state, we might need to look in candidates/
-            # but let's try to reload from the most likely location if it was Stage 1 complete.
-            # For simplicity, we'll try to find any BASELINE prompt.
-            # (In a real scenario, we'd have a fixed naming scheme or state pointer)
-            # Since baseline_candidate is needed for stage 2, let's look for it.
-            # For now, let's assume we can load it if it's saved.
-            # Actually, WP05 executors pass candidates back.
-            pass
+            candidates_dir = self.state_manager.base_dir / "candidates"
+            for f in candidates_dir.glob("*.json"):
+                with open(f, "r") as cf:
+                    cand = PromptCandidate.model_validate_json(cf.read())
+                    if cand.stage == PromptStage.BASELINE:
+                        baseline_candidate = cand
+                        break
 
         # Stage 2: Hardening on Small Model
         if self.state_manager.status in [
@@ -113,7 +113,7 @@ class ExperimentRunner:
                 train_loader=self.loader,
                 benchmark=benchmark,
                 baseline_prompt=baseline_candidate,
-                limit=10,
+                limit=self.config.data_limit,
             )
         else:
             logger.info(
@@ -151,7 +151,7 @@ class ExperimentRunner:
                 benchmark=benchmark,
                 candidate=baseline_candidate,
                 model_name=self.config.small_model,
-                limit=10,
+                limit=self.config.data_limit,
             )
 
             # Evaluate hardened on small model (experiment)
@@ -161,7 +161,27 @@ class ExperimentRunner:
                 benchmark=benchmark,
                 candidate=hardened_candidate,
                 model_name=self.config.small_model,
-                limit=10,
+                limit=self.config.data_limit,
+            )
+
+            # Evaluate baseline on large model (control-large)
+            logger.info(f"Evaluating baseline prompt on {self.config.large_model}...")
+            self.stage3_executor.execute(
+                test_loader=self.loader,
+                benchmark=benchmark,
+                candidate=baseline_candidate,
+                model_name=self.config.large_model,
+                limit=self.config.data_limit,
+            )
+
+            # Evaluate hardened on large model (experiment-large)
+            logger.info(f"Evaluating hardened prompt on {self.config.large_model}...")
+            self.stage3_executor.execute(
+                test_loader=self.loader,
+                benchmark=benchmark,
+                candidate=hardened_candidate,
+                model_name=self.config.large_model,
+                limit=self.config.data_limit,
             )
 
             self.state_manager.update_status(ExperimentStatus.COMPLETE)

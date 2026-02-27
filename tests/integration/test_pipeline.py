@@ -80,4 +80,11 @@ def test_experiment_pipeline(
         cli_main()
 
     # Check that report was generated
+    # Check that report was generated and has content
     assert (tmp_path / "report.md").exists()
+    report_content = (tmp_path / "report.md").read_text()
+    assert "# Experiment Report: test-integration-001" in report_content
+    # Each prompt should have 2 evaluations (1 for small_model, 1 for large_model)
+    # The reporter aggregates them.
+    assert "Evaluations Count: 2" in report_content
+    assert "The weak-hardened prompt performed identically" in report_content

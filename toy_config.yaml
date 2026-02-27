@@ -1,0 +1,7 @@
+experiment_id: "toy-test-01"
+large_model: "arcee-ai/trinity-large-preview:free"
+small_model: "stepfun/step-3.5-flash:free"
+benchmarks:
+  - "SuperGPQA"
+budget_iterations: 1
+data_limit: 3

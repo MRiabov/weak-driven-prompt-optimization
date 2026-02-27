@@ -15,6 +15,7 @@ class ExperimentConfig(BaseModel):
     small_model: str
     benchmarks: List[str]
     budget_iterations: int
+    data_limit: int = 10
 
 
 class PromptCandidate(BaseModel):

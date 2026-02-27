@@ -2,7 +2,8 @@ from enum import Enum
 import json
 from pathlib import Path
 from typing import Optional
-from src.models.domain import PromptCandidate, EvaluationResult
+from src.models.domain import PromptCandidate, EvaluationResult, ExperimentConfig
+
 
 class ExperimentStatus(str, Enum):
     NOT_STARTED = "NOT_STARTED"
@@ -13,8 +14,14 @@ class ExperimentStatus(str, Enum):
     COMPLETE = "COMPLETE"
     FAILED = "FAILED"
 
+
 class ExperimentStateManager:
-    def __init__(self, experiment_id: str, max_budget_iterations: int, base_dir: str = ".checkpoints"):
+    def __init__(
+        self,
+        experiment_id: str,
+        max_budget_iterations: int,
+        base_dir: str = ".checkpoints",
+    ):
         self.experiment_id = experiment_id
         self.max_budget_iterations = max_budget_iterations
         self.current_iterations = 0
@@ -22,7 +29,7 @@ class ExperimentStateManager:
         self.base_dir = Path(base_dir) / experiment_id
         self.base_dir.mkdir(parents=True, exist_ok=True)
         self._state_file = self.base_dir / "state.json"
-        
+
         # Load existing state if it exists
         self.load_state()
 
@@ -46,7 +53,7 @@ class ExperimentStateManager:
             "experiment_id": self.experiment_id,
             "max_budget_iterations": self.max_budget_iterations,
             "current_iterations": self.current_iterations,
-            "status": self.status.value
+            "status": self.status.value,
         }
         self._atomic_write(self._state_file, json.dumps(state, indent=2))
 
@@ -58,7 +65,9 @@ class ExperimentStateManager:
                 # We prioritize the loaded max_budget_iterations unless it's fundamentally different
                 # In a real app we might want more complex logic here.
                 self.current_iterations = state.get("current_iterations", 0)
-                self.status = ExperimentStatus(state.get("status", ExperimentStatus.NOT_STARTED.value))
+                self.status = ExperimentStatus(
+                    state.get("status", ExperimentStatus.NOT_STARTED.value)
+                )
                 if "max_budget_iterations" in state:
                     self.max_budget_iterations = state["max_budget_iterations"]
 
@@ -91,6 +100,11 @@ class ExperimentStateManager:
             raise FileNotFoundError(f"Evaluation {eval_id} not found at {file_path}")
         with open(file_path, "r") as f:
             return EvaluationResult.model_validate_json(f.read())
+
+    def save_config(self, config: ExperimentConfig):
+        """Saves the experiment configuration to disk."""
+        config_file = self.base_dir / "config.json"
+        self._atomic_write(config_file, config.model_dump_json(indent=2))
 
     def _atomic_write(self, file_path: Path, content: str):
         """Writes content to a file atomically by using a temporary file and renaming it."""
