@@ -145,11 +145,10 @@
 
 <!-- status-model:start -->
 ## Canonical Status (Generated)
-
 - WP01: done
 - WP02: done
 - WP03: done
 - WP04: done
 - WP05: done
-- WP06: planned
+- WP06: for_review
 <!-- status-model:end -->
