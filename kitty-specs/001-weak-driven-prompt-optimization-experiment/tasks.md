@@ -41,9 +41,9 @@
 **Summary**: Build the DSPy signatures, modules, and the GEPA optimization logic for both the baseline and weak-agent stages.
 **Requirement Refs**: FR-001, FR-006
 **Included Subtasks**:
-- [ ] T007: Implement DSPy signatures and modules
-- [ ] T008: Integrate GEPA optimizer for the baseline stage
-- [ ] T009: Implement weak-agent hardening stage logic
+- [x] T007: Implement DSPy signatures and modules
+- [x] T008: Integrate GEPA optimizer for the baseline stage
+- [x] T009: Implement weak-agent hardening stage logic
 **Implementation Notes**: Langfuse tracing must wrap the DSPy executions.
 **Parallel Opportunities**: Yes, independent of WP02.
 **Dependencies**: WP01
@@ -127,5 +127,5 @@
 <!-- status-model:start -->
 ## Canonical Status (Generated)
 - WP01: done
-- WP02: for_review
+- WP02: done
 <!-- status-model:end -->
