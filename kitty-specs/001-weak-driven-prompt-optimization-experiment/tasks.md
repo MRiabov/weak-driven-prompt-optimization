@@ -13,9 +13,9 @@
 **Summary**: Set up the Python environment, dependencies, and define the core Pydantic data models.
 **Requirement Refs**: FR-001, FR-003
 **Included Subtasks**:
-- [ ] T001: Set up project environment (pyproject.toml/requirements.txt)
-- [ ] T002: Implement Pydantic domain models
-- [ ] T003: Configure Langfuse tracing and OpenRouter clients
+- [x] T001: Set up project environment (pyproject.toml/requirements.txt)
+- [x] T002: Implement Pydantic domain models
+- [x] T003: Configure Langfuse tracing and OpenRouter clients
 **Implementation Notes**: Must ensure strict schema validation using Pydantic as per the constitution.
 **Parallel Opportunities**: None
 **Dependencies**: None
