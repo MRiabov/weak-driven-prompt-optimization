@@ -107,8 +107,8 @@
 **Requirement Refs**: FR-003
 **Included Subtasks**:
 
-- [ ] T018: Build CLI entrypoint (`main.py`)
-- [ ] T019: Implement `run-experiment` command
+- [x] T018: Build CLI entrypoint (`main.py`)
+- [x] T019: Implement `run-experiment` command
 **Implementation Notes**: Use standard libraries like argparse or click.
 **Parallel Opportunities**: None
 **Dependencies**: WP06
@@ -150,5 +150,5 @@
 - WP03: done
 - WP04: done
 - WP05: done
-- WP06: for_review
+- WP06: done
 <!-- status-model:end -->
