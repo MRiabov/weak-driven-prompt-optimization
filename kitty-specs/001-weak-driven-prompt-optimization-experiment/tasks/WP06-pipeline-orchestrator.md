@@ -1,15 +1,15 @@
 ---
 work_package_id: WP06
 title: Pipeline Orchestrator
-lane: "doing"
+lane: "for_review"
 dependencies: [WP05]
 base_branch: main
 base_commit: 46dc0f7eb87f4a5febdce5ba4be1d51fb44b4815
 created_at: '2026-02-27T12:02:11.479324+00:00'
 subtasks: [T016, T017]
+agent: Antigravity
+shell_pid: '922104'
 requirement_refs: [FR-004]
-shell_pid: "922104"
-agent: "Antigravity"
 ---
 
 # Work Package Prompt: WP06 - Pipeline Orchestrator
@@ -45,3 +45,4 @@ With all individual stages, datasets, and state managers implemented, we need a 
 ## Activity Log
 - 2026-02-27T00:00:00Z – system – lane=planned – Prompt created.
 - 2026-02-27T12:02:11Z – Antigravity – shell_pid=922104 – lane=doing – Assigned agent via workflow command
+- 2026-02-27T12:07:58Z – Antigravity – shell_pid=922104 – lane=for_review – Ready for review
