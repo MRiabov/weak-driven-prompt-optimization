@@ -9,6 +9,7 @@ created_at: '2026-02-27T14:34:34.557386+00:00'
 subtasks: [T023, T024]
 requirement_refs: [FR-004]
 shell_pid: "922104"
+agent: "Antigravity"
 ---
 
 # Work Package Prompt: WP09 - Integration Testing
@@ -40,3 +41,4 @@ Following the project constitution, we reject unit testing in favor of full-work
 
 ## Activity Log
 - 2026-02-27T00:00:00Z – system – lane=planned – Prompt created.
+- 2026-02-27T14:34:34Z – Antigravity – shell_pid=922104 – lane=doing – Assigned agent via workflow command
