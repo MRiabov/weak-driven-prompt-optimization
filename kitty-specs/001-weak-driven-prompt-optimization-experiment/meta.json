@@ -1,0 +1,9 @@
+{
+  "feature_number": "001",
+  "slug": "001-weak-driven-prompt-optimization-experiment",
+  "feature_slug": "001-weak-driven-prompt-optimization-experiment",
+  "friendly_name": "weak driven prompt optimization experiment",
+  "mission": "software-dev",
+  "target_branch": "main",
+  "created_at": "2026-02-27T08:37:15.285702+00:00"
+}
