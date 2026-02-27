@@ -55,9 +55,9 @@
 **Summary**: Build a robust state manager to persist progress, handle budget constraints, and enable run resumption.
 **Requirement Refs**: FR-005, FR-006
 **Included Subtasks**:
-- [ ] T010: Implement `ExperimentState` manager
-- [ ] T011: Implement budget iteration tracking
-- [ ] T012: Implement save/load checkpoints for models
+- [x] T010: Implement `ExperimentState` manager
+- [x] T011: Implement budget iteration tracking
+- [x] T012: Implement save/load checkpoints for models
 **Implementation Notes**: Essential for cost-savings. If the script crashes, we shouldn't lose expensive OpenRouter API outputs.
 **Parallel Opportunities**: None
 **Dependencies**: WP01
@@ -128,5 +128,5 @@
 ## Canonical Status (Generated)
 - WP01: done
 - WP02: done
-- WP03: for_review
+- WP03: done
 <!-- status-model:end -->
