@@ -9,6 +9,7 @@ created_at: '2026-02-27T12:39:32.420973+00:00'
 subtasks: [T018, T019]
 requirement_refs: [FR-003]
 shell_pid: "978047"
+agent: "Antigravity"
 ---
 
 # Work Package Prompt: WP07 - CLI Application
@@ -40,3 +41,4 @@ Provide the user interface to trigger the experiment runner. This focuses purely
 
 ## Activity Log
 - 2026-02-27T00:00:00Z – system – lane=planned – Prompt created.
+- 2026-02-27T12:39:32Z – Antigravity – shell_pid=978047 – lane=doing – Assigned agent via workflow command
