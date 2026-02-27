@@ -27,9 +27,9 @@
 **Summary**: Implement streaming data loaders for HuggingFace datasets and define the evaluation metrics.
 **Requirement Refs**: FR-002, FR-005
 **Included Subtasks**:
-- [ ] T004: Implement HuggingFace dataset streaming loaders
-- [ ] T005: Implement metric evaluation functions
-- [ ] T006: Implement `DatasetExporter` for JSONL output
+- [x] T004: Implement HuggingFace dataset streaming loaders
+- [x] T005: Implement metric evaluation functions
+- [x] T006: Implement `DatasetExporter` for JSONL output
 **Implementation Notes**: Streaming must be used for datasets to avoid large local downloads.
 **Parallel Opportunities**: Yes, independent of WP03.
 **Dependencies**: WP01
@@ -126,5 +126,6 @@
 
 <!-- status-model:start -->
 ## Canonical Status (Generated)
-- WP01: for_review
+- WP01: done
+- WP02: in_progress
 <!-- status-model:end -->
